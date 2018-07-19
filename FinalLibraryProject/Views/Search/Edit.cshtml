@@ -1,0 +1,73 @@
+﻿@model FinalLibraryProject.Models.LibraryItem
+
+<br />
+
+<div class="jumbotron ">
+    <div class="row item-content" id="itemView">
+        <div class="col-12">
+            <div class="card bg-dark px-3 py-3">
+                <p class="text-white">Edit item</p>
+                <hr style="margin-top:5px; margin-bottom:10px">
+
+                <form asp-controller="Search" asp-action="CommitEdit">
+
+                    <input type="hidden" asp-for="ItemId" />
+
+                    <div class="form-group">
+                        <label asp-for="Isbn" class="text-white">ISBN</label>
+                        <input type="text" asp-for="Isbn" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Title" class="text-white">Title</label>
+                        <input type="text" asp-for="Title" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AuthorFirstName" class="text-white">Author First Name</label>
+                        <input type="text" asp-for="AuthorFirstName" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AuthorLastName" class="text-white">Author Last Name</label>
+                        <input type="text" asp-for="AuthorLastName" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Publisher" class="text-white">Publisher</label>
+                        <input type="text" asp-for="Publisher" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="YearPublished" class="text-white">Year Published</label>
+                        <input type="number" asp-for="YearPublished" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="DetailDescription" class="text-white">Detail Description</label>
+                        <input type="text" asp-for="DetailDescription" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Cost" class="text-white">Cost</label>
+                        <input type="number" asp-for="Cost" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="LibrarySection" class="text-white">Library Section</label>
+                        <input type="text" asp-for="LibrarySection" class="form-control">
+                    </div>
+
+                    <input type="hidden" asp-for="ItemType" />
+
+                    <input type="hidden" asp-for="Genre" />
+
+                    <input type="hidden" asp-for="DateAddedToSystem" />
+
+                    <button type="submit" class="btn btn-primary btn-md float-right">Update</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+﻿
+
+<br />
+
+<div class="row"> 
+	<div class="px-3"><button type="button"  onclick="showItems()" id="itemButton" class="btn btn-dark btn-lg">Items</button></div>
+	<div class="px-2"><button type="button" onclick="showMembers()" id="memberButton" class="btn btn-dark btn-lg">Members</button></div>
+	<div class="px-2"><button type="button" onclick="showReports()" id="reportButton" class="btn btn-dark btn-lg">Reports</button></div>
+</div>
+
+<div class="jumbotron ">
+    <div class="row item-content" id="itemView">
+        <div class="col-12">
+            <div class="card bg-dark px-3 py-3">
+                    <p class="text-white">Add a new item into the system</p>
+                    <hr style="margin-top:5px; margin-bottom:10px">
+
+					<form asp-controller="Staff" asp-action="AddItem">
+
+						<div class="form-group">
+							<label class="text-white">ISBN</label>
+							<input type="text" name="ISBN" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label class="text-white">Title</label>
+							<input type="text" name="Title" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label class="text-white">Author First Name</label>
+							<input type="text" name="AuthorFirstName" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label class="text-white">Author Last Name</label>
+							<input type="text" name="AuthorLastName" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label class="text-white">Publisher</label>
+							<input type="text" name="Publisher" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label class="text-white">Year Published</label>
+							<input type="number" name="YearPublished" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label class="text-white">Detail Description</label>
+							<input type="text" name="DetailDescription" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label class="text-white">Cost</label>
+							<input type="number" name="Cost" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label class="text-white">Library Section</label>
+							<input type="text" name="LibrarySection" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label class="text-white">Item Type</label>
+							<input type="text" name="ItemType" class="form-control">
+						</div>
+
+						<div class="form-group">
+							<label class="text-white">Genre</label>
+							<input type="text" name="Genre" class="form-control">
+						</div>
+
+						<button type="submit" class="btn btn-primary btn-md float-right">Submit</button>
+					</form>
+
+             </div>
+        </div>
+	</div>
+
+    <div class="row member-content" id="memberView">
+        <div class="col-12">
+            <div class="card bg-dark px-3 py-3">
+                    <p class="text-white">Look up member status</p>
+                    <hr style="margin-top:5px; margin-bottom:10px">
+                    <div class="row px-3">
+
+                        <p class="text-white">Enter member ID : </p>
+						<form asp-controller="Staff" asp-action="CheckMember">
+                            <div class="form-group px-2">
+                                <input type="number" name="MemberID" class="form-control-sm">
+                                <input type="submit" value="Search" class="btn btn-primary btn-md" />
+                            </div>
+						</form>
+
+                    </div>
+                <hr style="margin-top:5px; margin-bottom:10px">
+                    <div class="row px-3">
+                          <p class="text-white">Get list of all members : </p>
+                          <div class="px-1"><a asp-controller="Staff" asp-action="MemberList" class="btn btn-primary btn-md">Generate</a></div>
+                    </div>
+             </div>
+        </div>
+	</div>
+		<div class="row report-content" id="reportView">
+        <div class="col-12">
+            <div class="card bg-dark px-3 py-3">
+                    <p class="text-white">Statistics on library branch</p>
+                    <hr style="margin-top:5px; margin-bottom:30px">
+
+                    <form asp-controller="Staff" asp-action="Reports">
+                        <p class="text-white">Most checked out books - Select starting date : <input type="date" name="checkOutDate" class="form-control-sm"> </p>
+					    <hr style="margin-top:5px; margin-bottom:10px">
+					    <p class="text-white">Averge number of fines for an average member - Select starting date : <input type="date" name="fineDate" class="form-control-sm"></p>
+					    <hr style="margin-top:5px; margin-bottom:10px">
+					    <p class="text-white">Would you like to include the average age of members? :  <input type="text" name="ageFlag" class="form-control-sm" placeholder="Enter yes or no"></p>
+
+                        <input type="submit" value="Generate" class="btn btn-primary btn-md" />
+                    </form>
+
+             </div>
+        </div>
+
+    <hr style="margin-top:16px; margin-bottom:14px">
+
+</div>
+
+
+
+<script>
+    function showMembers() {
+        document.getElementById('memberView').style.display = "block";
+		document.getElementById('itemView').style.display = "none";
+		document.getElementById('reportView').style.display = "none";
+    }
+	function showItems() {
+        document.getElementById('memberView').style.display = "none";
+		document.getElementById('itemView').style.display = "block";
+		document.getElementById('reportView').style.display = "none";
+    }
+	function showReports() {
+        document.getElementById('memberView').style.display = "none";
+		document.getElementById('itemView').style.display = "none";
+		document.getElementById('reportView').style.display = "block";
+    }
+</script>

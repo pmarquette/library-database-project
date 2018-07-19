@@ -1,0 +1,96 @@
+﻿@model FinalLibraryProject.Models.SearchResultModel
+
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Principal
+@using FinalLibraryProject.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+
+<br />
+
+<div class="card bg-dark px-3 py-3">
+    <div class="card-block">
+        <div class="row">
+            <p class="text-white px-3">Search for library items</p>
+        </div>
+
+        <div class="row">
+            <div class="col-10">
+
+                <form asp-controller="Search" asp-action="SearchResult">
+                    <div class="row px-2">
+                        <div class="form-group px-2">
+                            <input type="text" name="TitleString" class="form-control" placeholder="Enter title">
+                        </div>
+
+                        <div class="form-group px-4">
+                            <input type="text" name="AuthorString" class="form-control" placeholder="Enter author or director">
+                        </div>
+
+                        <div class="px-10"><input type="submit" value="Search" class="btn btn-primary btn-sm float-right" /></div>
+                    </div>
+
+                    <div class="row px-2 options-content" id="moreOptions">
+                        <div class="form-group px-2">
+                            <input type="text" name="Publisher" class="form-control" placeholder="Enter publisher">
+                        </div>
+
+                        <div class="form-group px-4">
+                            <input type="text" name="YearPublished" class="form-control" placeholder="Enter publication year">
+                        </div>
+
+
+                        <div class="form-group">
+                            <select type="text" name="Genre" class="form-control" id="exampleSelect1">
+                                <option>Genre</option>
+                                <option>Literary fiction</option>
+                                <option>Sci-fi</option>
+                                <option>Thriller</option>
+                                <option>Mystery</option>
+                                <option>Horror</option>
+                                <option>Non-fiction</option>
+                                <option>Young Adult</option>
+                                <option>Children's</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group px-3">
+                            <select type="text" name="ItemType" class="form-control" id="exampleSelect2">
+                                <option>Item Type</option>
+                                <option>Book</option>
+                                <option>Audio Book</option>
+                                <option>Magazine</option>
+                                <option>Video</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </form>
+
+
+
+            </div>
+
+            <div><button onclick="showMoreOptions()" class="btn btn-primary btn-sm" id="optionsBtn">More Options</button></div>
+
+
+        </div>
+
+        
+
+    </div>
+</div>
+
+<br />
+
+
+
+
+<script>
+    function showMoreOptions() {
+        document.getElementById('moreOptions').classList.toggle("options-content");
+    }
+</script>

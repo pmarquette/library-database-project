@@ -1,0 +1,23 @@
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=FinalLibraryProject
+--content-root=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Account\Index.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Account\LoginPage.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Account\Register.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Home\About.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Home\Contact.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Home\Index.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Search\Detail.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Search\Edit.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Search\Index.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Search\SearchResult.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Shared\Error.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Shared\_Layout.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Staff\CheckMember.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Staff\Index.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Staff\MemberList.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\Staff\Reports.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\_ViewImports.cshtml
+--file=D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\Views\_ViewStart.cshtml

@@ -1,0 +1,22 @@
+c:\users\pmarquette\source\repos\FinalLibraryProject\FinalLibraryProject\bin\Debug\netcoreapp2.0\FinalLibraryProject.deps.json
+c:\users\pmarquette\source\repos\FinalLibraryProject\FinalLibraryProject\bin\Debug\netcoreapp2.0\FinalLibraryProject.runtimeconfig.json
+c:\users\pmarquette\source\repos\FinalLibraryProject\FinalLibraryProject\bin\Debug\netcoreapp2.0\FinalLibraryProject.runtimeconfig.dev.json
+c:\users\pmarquette\source\repos\FinalLibraryProject\FinalLibraryProject\bin\Debug\netcoreapp2.0\FinalLibraryProject.dll
+c:\users\pmarquette\source\repos\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.csprojResolveAssemblyReference.cache
+c:\users\pmarquette\source\repos\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.csproj.CoreCompileInputs.cache
+c:\users\pmarquette\source\repos\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.AssemblyInfoInputs.cache
+c:\users\pmarquette\source\repos\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.AssemblyInfo.cs
+c:\users\pmarquette\source\repos\FinalLibraryProject\FinalLibraryProject\bin\Debug\netcoreapp2.0\FinalLibraryProject.pdb
+c:\users\pmarquette\source\repos\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.dll
+c:\users\pmarquette\source\repos\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.pdb
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\bin\Debug\netcoreapp2.0\FinalLibraryProject.deps.json
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\bin\Debug\netcoreapp2.0\FinalLibraryProject.runtimeconfig.json
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\bin\Debug\netcoreapp2.0\FinalLibraryProject.runtimeconfig.dev.json
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\bin\Debug\netcoreapp2.0\FinalLibraryProject.dll
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\bin\Debug\netcoreapp2.0\FinalLibraryProject.pdb
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.csprojResolveAssemblyReference.cache
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.csproj.CoreCompileInputs.cache
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.AssemblyInfoInputs.cache
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.AssemblyInfo.cs
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.dll
+D:\My Files\CS\ASP.NET\FinalLibraryProject\FinalLibraryProject\obj\Debug\netcoreapp2.0\FinalLibraryProject.pdb

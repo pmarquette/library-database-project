@@ -1,0 +1,138 @@
+﻿@model FinalLibraryProject.Models.ItemDetailModel
+
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Principal
+@using FinalLibraryProject.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+	ViewData["ItemID"] = @Model.ItemID;
+}
+
+<br />
+
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <div>
+                <img src="https://www.mobileread.com/forums/attachment.php?attachmentid=111264&d=1378642555" style="height:200px; width:150px;" />
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="">
+                <p id="itemTitle" class="">Title: @Model.Title </p> 
+                <p>Author: @Model.AuthorFirstName  @Model.AuthorLastName</p>
+                <p>Publisher: @Model.Publisher  @Model.YearPublished</p>
+                <p>Genre: @Model.Genre</p>
+                <p>Located in library section: @Model.LibrarySection</p>
+                <p>Item ID: @Model.ItemID</p>
+            </div>
+        </div>
+    </div>
+
+    <hr style="margin-top:16px; margin-bottom:14px">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="">
+                <p id="itemTitle" class="">@Model.DetailDescription</p>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+			@if(SignInManager.IsSignedIn(User))
+			{
+				@if (Model.NumberAvailable > 0)
+				{
+            <p>Number of Copies Currently Available: @Model.NumberAvailable </p>
+					
+					<form id="Form1" asp-controller="Search" asp-action="Checkout" asp-route-model="@Model"> 
+						<input class="options-content" asp-for="@Model.ItemID" id="itemid" name="ItemID" /> 
+						<button id="btnSubmit" class="btn btn-primary" onclick="submitForm()">Checkout</button>
+
+					</form>
+
+				}
+				else
+				{
+					<p>You can wait list. Currently @Model.WaitListSize members are on the wait list.</p>
+
+					<form id="Form2" asp-controller="Search" asp-action="WaitList" asp-route-model="@Model"> 
+						<input class="options-content" asp-for="@Model.ItemID" id="itemid2" name="ItemID" /> 
+						<button id="btnSubmit" class="btn btn-primary" onclick="submitForm2()">Wait List</button>
+
+					</form>
+
+				}
+			}
+			@if(!SignInManager.IsSignedIn(User))
+			{
+				<p>Sign in to check out library items.</p>
+			}
+             @if(@UserManager.GetUserName(User) == "staff@gmail.com")
+             {
+
+                 <br />
+
+                 <p>Staff use only.</p>
+                 <div class="row">
+                     <div class="px-2">
+                         <a asp-controller="Search" asp-action="Edit" asp-route-id="@Model.ItemID" class="btn btn-primary btn-md">Edit Item</a>
+                     </div>
+                     <div class="px-2">
+                         <a asp-controller="Search" asp-action="Delete" asp-route-id="@Model.ItemID" class="btn btn-danger btn-md">Delete Item</a>
+                     </div>
+                 </div>
+
+             }
+        </div>
+    </div>
+</div>
+
+<script>
+function submitForm() { 
+                document.getElementById("Form1").submit(); 
+                var value = $("#itemid").val(); 
+
+                $.ajax({ 
+ 
+                    url: "Search/Checkout", 
+ 
+                    data: { ItemID: value }, 
+ 
+                    type: 'POST', 
+ 
+                    dataType: "json", 
+ 
+                    success: function (result) {                        
+ 
+                    } 
+                }); 
+ 
+            } 
+
+function submitForm2() { 
+    document.getElementById("Form2").submit(); 
+    var value = $("#itemid2").val(); 
+
+    $.ajax({ 
+ 
+        url: "Search/WaitList", 
+ 
+        data: { ItemID: value }, 
+ 
+        type: 'POST', 
+ 
+        dataType: "json", 
+ 
+        success: function (result) {                        
+ 
+        } 
+    }); 
+ 
+} 
+</script>

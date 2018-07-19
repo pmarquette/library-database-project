@@ -1,0 +1,29 @@
+﻿@model FinalLibraryProject.Models.ReportModel
+</br>
+<div class="jumbotron ">
+    <div class="col-12">
+        <div class="card bg-dark px-3 py-3">
+            <p class="text-white">Statistics on library branch</p>
+            <hr style="margin-top:5px; margin-bottom:30px">
+
+
+            <p class="text-white">Three most frequently checked out books since @Model.CheckoutDate : </p> @foreach (var asset in Model.BookTitles) { <p class="text-white">* @asset </p>}
+            <br>
+            <hr style="margin-top:5px; margin-bottom:10px">
+            <p class="text-white">Averge number of fines for an average member since @Model.FineDate :</p> 
+            <p class="text-white">$@Model.FineAverage</pclass="text-white">
+            <br>
+            <hr style="margin-top:5px; margin-bottom:10px">
+
+            @if(Model.AgeAverage != 0)
+            { 
+                <p class="text-white">Average age of members : </p>
+                <p class="text-white">@Model.AgeAverage</p>
+            }
+            
+        </div>
+    </div>
+</div>
+
+
+  

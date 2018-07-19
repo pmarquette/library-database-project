@@ -1,0 +1,22 @@
+﻿@model FinalLibraryProject.Models.MemberListModel
+</br>
+<div class="jumbotron ">
+    <div class="col-12">
+        <div class="card bg-dark px-3 py-3">
+            <div class="row">
+                <div class="col-4"><p class="text-white">Name </p></div>
+                <div class="col-4"><p class="text-white">Library ID </p></div>
+            </div>
+            
+            @foreach (var asset in Model.MembersList)
+            {
+                <div class="row">
+                    <div class="col-4"><p class="text-white">@asset.FirstName  @asset.LastName</p></div>
+                    <div class="col-4"><p class="text-white">@asset.LibraryId</p></div>
+                </div> 
+            }
+        </div>
+    </div>
+
+
+</div>

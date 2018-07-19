@@ -1,0 +1,105 @@
+﻿@model FinalLibraryProject.Models.AccountPageModel
+
+<br />
+
+<div class="jumbotron">
+    <h5>Welcome, @Model.FirstName @Model.LastName</h5>
+    <div class="row">
+        <div class="col-8">
+            <div class="card bg-dark px-3 py-3">
+                    <p class="text-white">Account Balance</p>
+                    <hr style="margin-top:5px; margin-bottom:10px">
+                    <p class="text-white">Current Amount Due: $@((@Model.CurrentAccountBalance == null) ? 0 : @Model.CurrentAccountBalance) </p>
+                    <div class="row px-3">
+
+                        <form asp-controller="Account" asp-action="Payment">
+						<div class="row px-3">
+							<p class="text-white">Make a payment : </p>
+							<div class="form-group px-2">
+								<input type="number" name="PaymentAmount" class="form-control-sm" placeholder="Enter amount">
+							</div>
+
+							<div class="px-10"><input type="submit" value="Submit" class="btn btn-primary btn-sm float-right" /></div>
+						</div>
+						</form>
+
+                    </div>
+             </div>
+        </div>
+		<div class="col-4">
+			<div class="card bg-dark px-3 py-3">
+				<p class="text-white">Make a Return</p>
+                <hr style="margin-top:5px; margin-bottom:10px">
+				<div class="row px-3 py-1">
+                        <p class="text-white">Enter item ID : </p>
+						<form asp-controller="Account" asp-action="ReturnItem">
+							<div class="form-group px-2">
+								<input type="number" name="ItemID" class="form-control-sm">
+							</div>
+							<input type="submit" value="Submit" class="btn btn-primary btn-sm float-right" />
+						</form>
+                    </div>
+			</div>
+		</div>
+    </div>
+
+    <br />
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="card bg-dark px-3 py-3">
+                <p class="text-white">Current Checkouts </p>
+				<div class="row">
+					<div class="col-6"><p class="text-white">Title </p></div>
+					<div class="col-6"><p class="text-white">Due Date </p></div>
+				</div>
+                <hr style="margin-top:5px; margin-bottom:10px">
+                <div class="row">
+                    @foreach (var asset in Model.CheckoutsList)
+					{
+						<div class="col-6"><p class="text-white">@((@asset.Item.Title == null) ? "" : @asset.Item.Title) </p></div>
+						<div class="col-6"><p class="text-white">@asset.DueDate</p></div>
+					}
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card bg-dark px-3 py-3">
+                <p class="text-white">Current Holds</p>
+				<div class="row">
+					<div class="col-6"><p class="text-white">Title </p></div>
+					<div class="col-6"><p class="text-white">Position </p></div>
+				</div>
+                <hr style="margin-top:5px; margin-bottom:10px">
+                <div class="row">
+                    @foreach (var asset in Model.WaitListList)
+					{
+						<div class="col-6"><p class="text-white">@((@asset.Item.Title == null) ? "" : @asset.Item.Title) </p></div>
+						<div class="col-6"><p class="text-white">1</p></div>
+					}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-dark px-3 py-3">
+                <p class="text-white">Past Checkouts</p>
+				<div class="row">
+					<div class="col-6"><p class="text-white">Title </p></div>
+					<div class="col-6"><p class="text-white">Date Returned</p></div>
+				</div>
+                <hr style="margin-top:5px; margin-bottom:10px">
+                <div class="row">
+					@foreach (var asset in Model.PastCheckoutsList)
+					{
+						<div class="col-6"><p class="text-white">@((@asset.Item.Title == null) ? "" : @asset.Item.Title) </p></div>
+						<div class="col-6"><p class="text-white">@asset.TimeReturned </p></div>
+					}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

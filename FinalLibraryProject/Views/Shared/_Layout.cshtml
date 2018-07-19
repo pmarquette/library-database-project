@@ -1,0 +1,126 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LibraryManagementTeam6</title>
+
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="~/css/styles.css" />
+
+
+</head>
+<body id="background">
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a asp-area="" asp-controller="Search" asp-action="Index" class="navbar-brand"><font size="5">University Library</font></a>
+            <ul class="nav navbar-nav navbar-right">
+
+                @if(@UserManager.GetUserName(User) == "staff@gmail.com")
+				{
+					<li class="nav-item">
+						<a asp-area="" asp-controller="Staff" asp-action="Index" class="nav-link">Staff</a>
+					</li>
+				}
+
+				@if(SignInManager.IsSignedIn(User))
+				{
+					<li class="nav-item">
+						<a asp-area="" asp-controller="Account" asp-action="Index" class="nav-link">Account</a>
+					</li>
+				}
+
+                @if(String.IsNullOrEmpty(@UserManager.GetUserName(User)))
+				{
+					<li class="nav-item">
+						<a asp-area="" asp-controller="Account" asp-action="Register" class="nav-link">Register</a>
+					</li>
+				}
+
+				@if(String.IsNullOrEmpty(@UserManager.GetUserName(User)))
+				{
+					<li class="nav-item">
+                        <a asp-area="" asp-controller="Account" asp-action="LoginPage" class="nav-link">Login</a>
+						<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title px-4" id="exampleModalLabel">Login</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<form asp-controller="Account" asp-action="Login">
+										<div class="modal-body">
+											<input type="text" class="form-control" name="Email" placeholder="User name">
+											<hr style="margin-top:14px; margin-bottom:14px">
+											<input type="password" class="form-control" name="Password" placeholder="Password">
+										</div>
+										<div class="modal-footer">
+											<input type="submit" value="Submit" class="btn btn-primary btn-sm float-right" />
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</li>
+				}
+				@if(!String.IsNullOrEmpty(@UserManager.GetUserName(User)))
+				{
+					<li class="nav-item">
+						<a asp-area="" asp-controller="Account" asp-action="Logout" class="nav-link">Logout</a>
+					</li>
+				}
+
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="layer">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer center-on-small-only pt-4 mt-4 bg-dark">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-6">
+                    <h5 class="text-uppercase text-light">Location</h5>
+                    <p class="text-light">500 McKinney Street <br /> Houston, Texas 77002 <br /> (832) 393-1313</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h5 class="text-uppercase text-light">Hours of Operation</h5>
+                    <div class="row">
+                        <div class="col-6"><p class="text-light">Monday 8-5 </br> Tuesday 8-5</br> Wedensday 8-5</p></div>
+                        <div class="col-6"><p class="text-light">Thursday 8-5 </br> Friday 8-5</br> </p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+    
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@model FinalLibraryProject.Models.CheckMemberModel
+</br>
+<div class="jumbotron ">
+        <div class="col-12">
+            <div class="card bg-dark px-3 py-3">
+			<p class="text-white">Account for: @Model.FirstName @Model.LastName</p>
+			<p class="text-white">Current Amount Owed: $@Model.CurrentAccountBalance</p>
+			<p class="text-white">Currently Suspended: @Model.CurrentlySuspended</p>
+            </div>   
+		</div>
+        <hr style="margin-top:16px; margin-bottom:14px">
+
+
+        <div class="col-12">
+            <div class="card bg-dark px-3 py-3">
+                <p class="text-white">Current Checkouts </p>
+                <hr style="margin-top:5px; margin-bottom:10px">
+                <div class="col-md-4">
+                <div class="row">
+                    <div class="col-6"><p class="text-white">Title </p></div>
+                    <div class="col-6"><p class="text-white">Due Date </p></div>
+                </div>
+                <hr style="margin-top:5px; margin-bottom:10px">
+                <div class="row">
+                    @foreach (var asset in Model.PastCheckoutsList)
+                    {
+                        <div class="col-6"><p class="text-white">@((@asset.Item.Title == null) ? "" : @asset.Item.Title) </p></div>
+                        <div class="col-6"><p class="text-white">@asset.DueDate</p></div>
+                    }
+
+                </div>
+                </div>
+            </div>
+        </div>
+</div>
